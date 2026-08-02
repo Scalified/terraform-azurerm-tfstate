@@ -29,3 +29,8 @@ output "keyvault_secrets" {
   value       = module.tfstate.keyvault_secrets
   sensitive   = true
 }
+
+output "my_ip" {
+  description = "Current public IP address"
+  value       = module.tfstate.my_ip
+}

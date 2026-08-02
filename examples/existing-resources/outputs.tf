@@ -32,3 +32,8 @@ output "tags" {
   description = "Computed tags applied to resources"
   value       = module.tfstate.tags
 }
+
+output "my_ip" {
+  description = "Current public IP address"
+  value       = module.tfstate.my_ip
+}

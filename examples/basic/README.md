@@ -44,3 +44,4 @@ After successful apply, the following outputs will be displayed:
 - `tfstate_container_name` - The name of the blob container
 - `keyvault_name` - The name of the Key Vault
 - `location` - The Azure region
+- `my_ip` - The current public IP address

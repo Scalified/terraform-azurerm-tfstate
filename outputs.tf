@@ -23,8 +23,13 @@ output "keyvault_name" {
   value       = local.keyvault_name
 }
 
+output "my_ip" {
+  description = "Current public IP address (from api.ipify.org)"
+  value       = data.http.public_ip.response_body
+}
+
 output "allowed_ips" {
-  description = "List of allowed IP addresses (computed from var.allowed_ips or current public IP)"
+  description = "List of allowed IP addresses (computed from var.allowed_ips and optionally my_ip)"
   value       = local.allowed_ips
 }
 
