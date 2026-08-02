@@ -22,3 +22,8 @@ output "location" {
   description = "Azure region where resources are created"
   value       = module.tfstate.location
 }
+
+output "my_ip" {
+  description = "Current public IP address"
+  value       = module.tfstate.my_ip
+}

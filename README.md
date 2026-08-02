@@ -27,7 +27,7 @@ The module creates the following resources:
 ```hcl
 module "tfstate" {
   source  = "Scalified/tfstate/azurerm"
-  version = "~> 1.0"
+  version = "~> 1.0.0"
 
   project = "myproject"
   tags = {
@@ -46,6 +46,7 @@ terraform apply -var='allowed_ips=["203.0.113.0/24", "198.51.100.10/32"]'
 |--------------------------|-----------------------------------------------------------------------|----------------|----------------|----------|
 | `project`                | Project identifier used for naming and tagging resources              | `string`       |                | yes      |
 | `location`               | Azure region where all resources will be created                      | `string`       | `"westeurope"` | no       |
+| `allow_my_ip`            | Whether to include the current public IP in the allowed_ips list      | `bool`         | `true`         | no       |
 | `allowed_ips`            | List of public IPv4/IPv6 CIDRs allowed to access restricted endpoints | `list(string)` | `[]`           | no       |
 | `tags`                   | Map of tags applied to all created resources                          | `map(string)`  | `{}`           | no       |
 | `resource_group_name`    | Name of the project resource group                                    | `string`       | `null`         | no       |
@@ -93,7 +94,8 @@ The `keyvault_secrets` variable accepts a map with the following attributes:
 | `storage_account_name`   | Name of the storage account (either provided or computed)                         |
 | `tfstate_container_name` | Name of the storage container for Terraform state (either provided or computed)   |
 | `keyvault_name`          | Name of the Key Vault (either provided or computed)                               |
-| `allowed_ips`            | List of allowed IP addresses (computed from var.allowed_ips or current public IP) |
+| `my_ip`                  | Current public IP address (from api.ipify.org)                                    |
+| `allowed_ips`            | List of allowed IP addresses (computed from var.allowed_ips and optionally my_ip) |
 | `tags`                   | Computed tags applied to resources                                                |
 | `location`               | Azure region where resources are created                                          |
 | `keyvault_keys`          | Map of keys configured in the Key Vault                                           |

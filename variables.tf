@@ -9,6 +9,12 @@ variable "location" {
   default     = "westeurope"
 }
 
+variable "allow_my_ip" {
+  description = "Whether to include the current public IP in the allowed_ips list. When true, merges allowed_ips with my_ip. When false, uses only user-provided allowed_ips"
+  type        = bool
+  default     = true
+}
+
 variable "allowed_ips" {
   description = "List of public IPv4/IPv6 CIDRs allowed to access restricted endpoints"
   type        = list(string)
