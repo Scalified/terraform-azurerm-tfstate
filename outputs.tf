@@ -52,3 +52,8 @@ output "keyvault_secrets" {
   description = "Map of secrets configured in the Key Vault"
   value       = var.keyvault_secrets
 }
+
+output "keyvault_uri" {
+  description = "The URI of the Key Vault for performing operations on keys and secrets"
+  value       = module.avm-res-keyvault-vault.uri
+}

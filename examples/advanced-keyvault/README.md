@@ -41,6 +41,12 @@ This example demonstrates using the module with **Key Vault** keys and secrets f
    terraform apply -var='allowed_ips=["YOUR_IP/32"]'
    ```
 
+## Outputs
+
+| Output           | Description                                        |
+|------------------|----------------------------------------------------|
+| `keyvault_uri`   | The URI of the Key Vault for performing operations |
+
 ## Security Notes
 
 - **Never commit sensitive values** in `terraform.tfvars` or source code

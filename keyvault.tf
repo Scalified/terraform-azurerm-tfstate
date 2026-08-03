@@ -24,4 +24,10 @@ module "avm-res-keyvault-vault" {
   secrets_value                 = var.keyvault_secrets_value
   sku_name                      = "standard"
   soft_delete_retention_days    = 30
+  tags                          = local.tags
+
+  lock = {
+    kind = "CanNotDelete"
+    name = "lock-${local.keyvault_name}"
+  }
 }

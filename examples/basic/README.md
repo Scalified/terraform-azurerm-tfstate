@@ -43,5 +43,6 @@ After successful apply, the following outputs will be displayed:
 - `storage_account_name` - The name of the storage account
 - `tfstate_container_name` - The name of the blob container
 - `keyvault_name` - The name of the Key Vault
+- `keyvault_uri` - The URI of the Key Vault for performing operations on keys and secrets
 - `location` - The Azure region
 - `my_ip` - The current public IP address

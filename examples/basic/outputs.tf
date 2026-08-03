@@ -27,3 +27,8 @@ output "my_ip" {
   description = "Current public IP address"
   value       = module.tfstate.my_ip
 }
+
+output "keyvault_uri" {
+  description = "The URI of the Key Vault for performing operations on keys and secrets"
+  value       = module.tfstate.keyvault_uri
+}

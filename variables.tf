@@ -83,10 +83,10 @@ variable "keyvault_keys" {
     condition = alltrue(flatten([
       for key in values(var.keyvault_keys) : [
         for opt in coalesce(key.key_opts, []) :
-        contains(["decrypt", "encrypt", "sign", "unwrapKey", "verify", "wrapKey"], opt)
+        contains(["encrypt", "decrypt", "sign", "wrapKey", "unwrapKey", "verify"], opt)
       ]
     ]))
-    error_message = "key_opts possible values are: decrypt, encrypt, sign, unwrapKey, verify, wrapKey"
+    error_message = "key_opts possible values are: encrypt, decrypt, sign, wrapKey, unwrapKey, verify"
   }
   validation {
     condition = alltrue([

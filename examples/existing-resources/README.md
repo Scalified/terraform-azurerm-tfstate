@@ -17,6 +17,12 @@ This example demonstrates using the module with pre-existing or specifically nam
 | `tfstate_container_name` | `tfstate`                 | Custom blob container name                     |
 | `keyvault_name`          | `kv-tfstate-prod-legacy`  | Globally unique, 3-24 chars                    |
 
+## Outputs
+
+| Output           | Description                                        |
+|------------------|----------------------------------------------------|
+| `keyvault_uri`   | The URI of the Key Vault for performing operations |
+
 ## Important Notes
 
 ### Storage Account Naming

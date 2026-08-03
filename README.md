@@ -100,6 +100,7 @@ The `keyvault_secrets` variable accepts a map with the following attributes:
 | `location`               | Azure region where resources are created                                          |
 | `keyvault_keys`          | Map of keys configured in the Key Vault                                           |
 | `keyvault_secrets`       | Map of secrets configured in the Key Vault                                        |
+| `keyvault_uri`           | The URI of the Key Vault for performing operations on keys and secrets            |
 
 ---
 
